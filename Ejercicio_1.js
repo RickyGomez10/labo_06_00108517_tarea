@@ -17,25 +17,23 @@ while(numero != 6){
 		for(let i of arreglo){
 			if(i.codigo == codigo1){
 				console.log("El codigo que usted desea ingresar ya existe, ingrese otro por favor");
-				break;
-			}else{
-				var descrpicion1 = prompt("Ingrese la descripcion del producto");
-		var tipo1 = prompt("Ingrese el tipo del producto");
-		var preciocompra1 = prompt("Ingrese el precio de compra del producto");
-		var precioventa1 = prompt("Ingrese el precio de venta del producto");
-		var stock1 = prompt("Ingrese el stock del producto");
-		var producto = {
-			codigo: codigo1,
-			descripcion: descrpicion1,
-			tipo: tipo1,
-			preciocompra: preciocompra1,
-			precioventa: precioventa1,
-			stock: stock1
+				throw "Ya existe un producto con ese codigo";
+		}
+	}
+		var descrpicion1 = prompt("Ingrese la descripcion del producto");
+				var tipo1 = prompt("Ingrese el tipo del producto");
+				var preciocompra1 = prompt("Ingrese el precio de compra del producto");
+				var precioventa1 = prompt("Ingrese el precio de venta del producto");
+				var stock1 = prompt("Ingrese el stock del producto");
+				var producto = {
+				codigo: codigo1,
+				descripcion: descrpicion1,
+				tipo: tipo1,
+				preciocompra: preciocompra1,
+				precioventa: precioventa1,
+				stock: stock1
 		}
 		arreglo.push(producto);
-
-			}
-		}
 		
 
 	}else if (numero ==2) {
@@ -50,6 +48,8 @@ while(numero != 6){
 				console.log("5. Modificar el stock del producto");
 				var modificar = prompt("Ingrese la opcion para modificar valor del producto");
 				if(modificar == 1){
+					var nuevovalor = prompt("Ingrese la nueva descripcion del producto");
+					i.descripcion = nuevovalor;
 
 				}else if(modificar ==2){
 					var nuevovalor= prompt("Ingrese el nuevo tipo del producto");
