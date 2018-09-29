@@ -1,3 +1,4 @@
+function ejercicio1(){
 var numero = 0;
 var arreglo = [];
 var ventas = 0;
@@ -170,5 +171,6 @@ while(numero != 6){
 		alert("Usted esta saliendo del programa");
 		break;
 
+		}
 	}
 }
