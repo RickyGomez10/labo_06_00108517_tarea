@@ -6,7 +6,7 @@ var promedioventas = 0;
 while(numero != 6){
 	console.log("Que opcion desea realizar?");
 	console.log("1. Agregar producto");
-	console.log("2.	Modificar stock");
+	console.log("2.	Opciones para modificar un producto");
 	console.log("3. Registrar venta y reducir stock");
 	console.log("4. Mostrar promedio de ventas realizadas");
 	console.log("5. Mostrar productos con stock 0");
@@ -14,11 +14,16 @@ while(numero != 6){
 	numero = prompt("Ingrese el numero de una de las opciones");
 	if (numero ==1) {
 		var codigo1 = prompt("Ingrese el codigo del producto");
-		var descrpicion1 = prompt("Ingrese la descripcion del producto");
+		for(let i of arreglo){
+			if(i.codigo == codigo1){
+				console.log("El codigo que usted desea ingresar ya existe, ingrese otro por favor");
+				break;
+			}else{
+				var descrpicion1 = prompt("Ingrese la descripcion del producto");
 		var tipo1 = prompt("Ingrese el tipo del producto");
 		var preciocompra1 = prompt("Ingrese el precio de compra del producto");
 		var precioventa1 = prompt("Ingrese el precio de venta del producto");
-		var stock1 = prompt("Ingrese el stcok del producto");
+		var stock1 = prompt("Ingrese el stock del producto");
 		var producto = {
 			codigo: codigo1,
 			descripcion: descrpicion1,
@@ -27,7 +32,11 @@ while(numero != 6){
 			precioventa: precioventa1,
 			stock: stock1
 		}
-		arreglo.push(producto)
+		arreglo.push(producto);
+
+			}
+		}
+		
 
 	}else if (numero ==2) {
 		var buscar = prompt("Ingrese el codigo del producto que desea modificar");
@@ -48,15 +57,30 @@ while(numero != 6){
 
 				}else if(modificar ==3){
 					var nuevovalor= prompt("Ingrese el nuevo precio de compra del producto");
+					if(nuevovalor <0){
+						console.log("No se puede ingresar valores negativos al precio de compra del producto");
+						break;
+					}else{
 					i.preciocompra = nuevovalor;
+					}
 				}
 				else if(modificar ==4){
 					var nuevovalor= prompt("Ingrese el nuevo precio de venta del producto");
+					if(nuevovalor <0){
+						console.log("No se puede ingresar valores negativos al precio de venta del producto");
+						break;
+					}else{
 					i.precioventa = nuevovalor;
+					}
 				}
 				else if(modificar ==5){
 					var nuevovalor= prompt("Ingrese el nuevo stock del producto");
+					if(nuevovalor < 0){
+						console.log("No puede ingresar valores negativos al stock");
+						break
+					}else{
 					i.stock = nuevovalor;
+					}
 				}
 			}
 		}
@@ -98,10 +122,16 @@ while(numero != 6){
 
 
 	}else if (numero ==5) {
+		var encontrado = false;
 		for(let i of arreglo){
 			if(i.stock == 0){
+				encontrado = true;
 				console.log(i);
+				break;
 			}
+		}
+		if(encontrado == false){
+			console.log("No tiene productos con stock 0");
 		}
 
 	}else if (numero ==6) {
