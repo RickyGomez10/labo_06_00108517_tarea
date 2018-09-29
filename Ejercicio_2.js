@@ -51,29 +51,5 @@ var convertor = {
 
 	}
 }
-/*var tipo_de_medida = {};
-function convertir(medida,medida_de_pieza,medida_a_convertir,tipo_de_medida){
-	
-		else if(medida_de_pieza == 'cm' && medida_a_convertir =='m' && tipo_de_medida == 'L'){
-				var L = {convertir: 	medida/100}
-				console.log(L.convertir);
-		}else if(medida_de_pieza == 'cm' && medida_a_convertir =='m' && tipo_de_medida == 'L'){
-				var L = {convertir: 	medida/100}
-				console.log(L.convertir);
-		}else if(medida_de_pieza == 'cm' && medida_a_convertir =='m' && tipo_de_medida == 'L'){
-				var L = {convertir: 	medida/100}
-				console.log(L.convertir);
-		}else if(medida_de_pieza == 'cm' && medida_a_convertir =='m' && tipo_de_medida == 'L'){
-				var L = {convertir: 	medida/100}
-				console.log(L.convertir);
-		}else if(medida_de_pieza == 'cm' && medida_a_convertir =='m' && tipo_de_medida == 'L'){
-				var L = {convertir: 	medida/100}
-				console.log(L.convertir);
-		}else if(medida_de_pieza == 'cm' && medida_a_convertir =='m' && tipo_de_medida == 'L'){
-				var L = {convertir: 	medida/100}
-				console.log(L.convertir);
-		}
-			
-	}
-	*/
+
 
